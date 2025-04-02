@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
+import MainContent from '../components/MainContent';
+import Footer from '../components/Footer';
+import RetroGrid from '../components/RetroGrid';
+import CRTOverlay from '../components/CRTOverlay';
+import BootSequence from '../components/BootSequence';
+import { useState, useEffect } from 'react';
+
+const title = 'Kaleida - Technology Incubator & R&D Lab';
+---
+
+<Layout title={title}>
+  <div id="app-container" class="min-h-screen bg-deep-space text-neon-green">
+    <RetroGrid client:load />
+    <div class="relative z-10">
+      <Header client:load />
+      <HeroSection client:load />
+      <MainContent client:load />
+      <Footer client:load />
+    </div>
+    <CRTOverlay client:load />
+  </div>
+
+  <script>
+    // Simple loading sequence simulation
+    document.addEventListener('DOMContentLoaded', () => {
+      const appContainer = document.getElementById('app-container');
+      
+      // Create boot sequence overlay
+      const bootOverlay = document.createElement('div');
+      bootOverlay.className = 'fixed inset-0 bg-black flex items-center justify-center z-50';
+      bootOverlay.innerHTML = `
+        <div class="text-neon-green font-mono text-xl">
+          <p>KALEIDA OS v1.0</p>
+          <p>Initializing...</p>
+          <p class="animate-pulse">Press any key to continue</p>
+        </div>
+      `;
+      
+      document.body.appendChild(bootOverlay);
+      
+      // Remove boot sequence after 3 seconds
+      setTimeout(() => {
+        bootOverlay.style.opacity = '0';
+        bootOverlay.style.transition = 'opacity 0.5s';
+        
+        setTimeout(() => {
+          bootOverlay.remove();
+        }, 500);
+      }, 3000);
+    });
+  </script>
+</Layout>

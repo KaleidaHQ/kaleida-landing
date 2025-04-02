@@ -1,7 +1,5 @@
-'use client'
-
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const technologies = [
   { name: 'AI', color: '#FF3366', icon: '🤖' },
@@ -10,10 +8,10 @@ const technologies = [
   { name: 'IoT', color: '#FFC23C', icon: '📡' },
   { name: 'Quantum', color: '#00b4d8', icon: '⚛️' },
   { name: 'AR/VR', color: '#f72585', icon: '🥽' },
-]
+];
 
 export default function HeroSection() {
-  const [hoveredTile, setHoveredTile] = useState<number | null>(null)
+  const [hoveredTile, setHoveredTile] = useState<number | null>(null);
 
   return (
     <section className="py-16 overflow-hidden">
@@ -50,6 +48,5 @@ export default function HeroSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
-

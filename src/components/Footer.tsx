@@ -1,7 +1,6 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -28,6 +27,5 @@ export default function Footer() {
         </motion.button>
       </div>
     </footer>
-  )
+  );
 }
-

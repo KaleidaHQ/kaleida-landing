@@ -1,19 +1,17 @@
-'use client'
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
-
-export default function Header({ chakraPetch }: { chakraPetch: any }) {
-  const [glitchEffect, setGlitchEffect] = useState(false)
+export default function Header() {
+  const [glitchEffect, setGlitchEffect] = useState(false);
 
   useEffect(() => {
     const glitchInterval = setInterval(() => {
-      setGlitchEffect(true)
-      setTimeout(() => setGlitchEffect(false), 200)
-    }, 5000)
+      setGlitchEffect(true);
+      setTimeout(() => setGlitchEffect(false), 200);
+    }, 5000);
 
-    return () => clearInterval(glitchInterval)
-  }, [])
+    return () => clearInterval(glitchInterval);
+  }, []);
 
   return (
     <header className="text-center py-8 relative">
@@ -43,7 +41,7 @@ export default function Header({ chakraPetch }: { chakraPetch: any }) {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className={`${chakraPetch.className} text-4xl mt-4 glow-text-green relative z-10`}
+        className="font-['Chakra_Petch'] text-4xl mt-4 glow-text-green relative z-10"
       >
         Kaleida
       </motion.h1>
@@ -56,6 +54,5 @@ export default function Header({ chakraPetch }: { chakraPetch: any }) {
         Technology Incubator & R&D Lab
       </motion.p>
     </header>
-  )
+  );
 }
-
