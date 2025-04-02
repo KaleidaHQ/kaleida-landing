@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime.D7gjeLXK.js";import"./index.6uItJ9jz.js";function i(){return e.jsxs("div",{className:"pointer-events-none fixed inset-0 z-50",children:[e.jsx("div",{className:"absolute inset-0 bg-crt-lines"}),e.jsx("div",{className:"absolute inset-0 bg-crt-flicker"})]})}export{i as default};
