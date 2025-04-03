@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kaleida Landing Page
 
-## Getting Started
+A retro-futuristic landing page for Kaleida, a technology incubator & R&D lab. This project is built with Astro and React, optimized for deployment on Cloudflare Pages.
 
-First, run the development server:
+## 🚀 Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Any static assets, like images, can be placed in the `public/` directory.
 
-## Learn More
+## 🧞 Commands
 
-To learn more about Next.js, take a look at the following resources:
+All commands are run from the root of the project, from a terminal:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌩️ Deploying to Cloudflare Pages
 
-## Deploy on Vercel
+This project is configured to work with Cloudflare Pages. Follow these steps to deploy:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to a GitHub repository
+2. Log in to your Cloudflare account and go to Pages
+3. Click "Create a project" and select your GitHub repository
+4. Configure your project with the following settings:
+   - Framework preset: Astro
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Environment variables: None required
+5. Click "Save and Deploy"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cloudflare Pages will automatically build and deploy your site. The Astro adapter for Cloudflare is already configured in this project.
+
+## ⚙️ Compatibility with Cloudflare Pages
+
+This project has been specifically optimized for Cloudflare Pages, addressing the compatibility issues that NextJS has with Cloudflare Pages. By using Astro with the Cloudflare adapter, we get:
+
+- Static site generation with dynamic components
+- Efficient edge rendering
+- No compatibility issues with Cloudflare's environment
+- Optimized asset delivery through Cloudflare's CDN

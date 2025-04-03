@@ -1,11 +1,8 @@
-'use client'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import Link from 'next/link'
-
-export default function MainContent({ chakraPetch }: { chakraPetch: any }) {
-  const [activeSection, setActiveSection] = useState(0)
+export default function MainContent() {
+  const [activeSection, setActiveSection] = useState(0);
 
   const sections = [
     {
@@ -14,9 +11,9 @@ export default function MainContent({ chakraPetch }: { chakraPetch: any }) {
         <>
           <p className="mb-4">Discover our groundbreaking projects pushing the boundaries of technology.</p>
           <ul className="list-disc list-inside space-y-2">
-            <li><Link href="/projects/project-a" className="text-neon-pink hover:underline">Project A: AI-driven data analysis</Link></li>
-            <li><Link href="/projects/project-b" className="text-neon-pink hover:underline">Project B: Blockchain for supply chain</Link></li>
-            <li><Link href="/projects/project-c" className="text-neon-pink hover:underline">Project C: IoT ecosystem for smart cities</Link></li>
+            <li><a href="/projects/project-a" className="text-neon-pink hover:underline">Project A: AI-driven data analysis</a></li>
+            <li><a href="/projects/project-b" className="text-neon-pink hover:underline">Project B: Blockchain for supply chain</a></li>
+            <li><a href="/projects/project-c" className="text-neon-pink hover:underline">Project C: IoT ecosystem for smart cities</a></li>
           </ul>
         </>
       ),
@@ -33,15 +30,15 @@ export default function MainContent({ chakraPetch }: { chakraPetch: any }) {
         <>
           <p className="mb-4">See how our contributions are shaping the future of open source.</p>
           <ul className="list-disc list-inside space-y-2">
-            <li><Link href="https://github.com/kaleida/project-x" className="text-neon-blue hover:underline">Project X: Distributed computing framework</Link></li>
-            <li><Link href="https://github.com/kaleida/library-y" className="text-neon-blue hover:underline">Library Y: Machine learning toolkit</Link></li>
-            <li><Link href="https://github.com/kaleida/tool-z" className="text-neon-blue hover:underline">Tool Z: Developer productivity suite</Link></li>
+            <li><a href="https://github.com/kaleida/project-x" className="text-neon-blue hover:underline">Project X: Distributed computing framework</a></li>
+            <li><a href="https://github.com/kaleida/library-y" className="text-neon-blue hover:underline">Library Y: Machine learning toolkit</a></li>
+            <li><a href="https://github.com/kaleida/tool-z" className="text-neon-blue hover:underline">Tool Z: Developer productivity suite</a></li>
           </ul>
         </>
       ),
       icon: '🌟',
     },
-  ]
+  ];
 
   return (
     <div className="py-16">
@@ -70,7 +67,7 @@ export default function MainContent({ chakraPetch }: { chakraPetch: any }) {
           transition={{ duration: 0.3 }}
           className="bg-deep-space-light p-8 rounded-lg shadow-neon"
         >
-          <h2 className={`${chakraPetch.className} text-3xl font-bold mb-4 glow-text-pink`}>
+          <h2 className="font-['Chakra_Petch'] text-3xl font-bold mb-4 glow-text-pink">
             {sections[activeSection].title}
           </h2>
           <div className="retro-divider mb-4"></div>
@@ -78,6 +75,5 @@ export default function MainContent({ chakraPetch }: { chakraPetch: any }) {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-

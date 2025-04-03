@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function CRTOverlay() {
   return (
     <div className="pointer-events-none fixed inset-0 z-50">
@@ -6,4 +8,3 @@ export default function CRTOverlay() {
     </div>
   )
 }
-
